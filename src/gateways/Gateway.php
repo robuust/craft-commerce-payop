@@ -93,7 +93,7 @@ class Gateway extends OffsiteGateway
 
         $gateway->setPublicKey(App::parseEnv($this->publicKey));
         $gateway->setSecretKey(App::parseEnv($this->secretKey));
-        $gateway->setAccessToken(App::parseEnv($this->setAccessToken));
+        $gateway->setAccessToken(App::parseEnv($this->accessToken));
 
         return $gateway;
     }
