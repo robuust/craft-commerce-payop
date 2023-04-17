@@ -66,6 +66,7 @@ class Gateway extends OffsiteGateway
     public function populateRequest(array &$request, BasePaymentForm $paymentForm = null): void
     {
         parent::populateRequest($request, $paymentForm);
+        $request['payer'] = ['email' => $request['order']->email];
         $request['language'] = $request['order']->orderLanguage;
     }
 
@@ -91,9 +92,9 @@ class Gateway extends OffsiteGateway
         /** @var OmnipayGateway $gateway */
         $gateway = static::createOmnipayGateway($this->getGatewayClassName());
 
-        $gateway->setPublicKey(App::parseEnv($this->publicKey));
-        $gateway->setSecretKey(App::parseEnv($this->secretKey));
-        $gateway->setAccessToken(App::parseEnv($this->accessToken));
+        $gateway->setParameter('publicKey', App::parseEnv($this->publicKey));
+        $gateway->setParameter('secretKey', App::parseEnv($this->secretKey));
+        $gateway->setParameter('accessToken', App::parseEnv($this->accessToken));
 
         return $gateway;
     }
