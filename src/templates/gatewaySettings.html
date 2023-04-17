@@ -1,0 +1,31 @@
+{% from "_includes/forms" import autosuggestField %}
+
+{{ autosuggestField({
+    label: 'Public key'|t('commerce'),
+    id: 'publicKey',
+    class: 'ltr',
+    name: 'publicKey',
+    value: gateway.publicKey,
+    suggestEnvVars: true,
+    errors: gateway.getErrors('publicKey')
+}) }}
+
+{{ autosuggestField({
+    label: "Secret key"|t('commerce'),
+    id: 'secretKey',
+    class: 'ltr',
+    name: 'secretKey',
+    value: gateway.secretKey,
+    suggestEnvVars: true,
+    errors: gateway.getErrors('secretKey')
+}) }}
+
+{{ autosuggestField({
+    label: "Access token"|t('commerce'),
+    id: 'accessToken',
+    class: 'ltr',
+    name: 'accessToken',
+    value: gateway.accessToken,
+    suggestEnvVars: true,
+    errors: gateway.getErrors('accessToken')
+}) }}

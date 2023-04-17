@@ -1,0 +1,49 @@
+{
+    "name": "robuust/craft-commerce-payop",
+    "description": "PayOp integration for Craft Commerce",
+    "version": "1.0.0",
+    "type": "craft-plugin",
+    "keywords": [
+        "payop",
+        "commerce",
+        "craftcms",
+        "omnipay",
+        "yii2"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Robuust",
+            "homepage": "https://robuust.digital/"
+        }
+    ],
+    "support": {
+        "email": "support@robuust.digital",
+        "issues": "https://github.com/robuust/craft-commerce-payop/issues?state=open",
+        "source": "https://github.com/robuust/craft-commerce-payop",
+        "docs": "https://github.com/robuust/craft-commerce-payop",
+        "rss": "https://github.com/robuust/craft-commerce-payop/commits/main.atom"
+    },
+    "require": {
+        "behzadbabaei/omnipay-payop": "^1.0",
+        "craftcms/cms": "^4.0",
+        "craftcms/commerce": "^4.0",
+        "craftcms/commerce-omnipay": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "robuust\\payop\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "PayOp for Craft Commerce",
+        "handle": "commerce-payop"
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true,
+            "craftcms/plugin-installer": true,
+            "php-http/discovery": true
+        }
+    }
+}
